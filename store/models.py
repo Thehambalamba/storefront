@@ -25,6 +25,12 @@ class Customer(models.Model):
         max_length=1, choices=MEMBERSHIP_CHOICE, default=MEMBERSHIP_BRONZE)
 
 
+class Adress(models.Model):
+    street = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+
 class Order(models.Model):
     PAYMENT_STATUS_PENDING = 'P'
     PAYMENT_STATUS_COMPLETE = 'C'
