@@ -39,7 +39,7 @@ class Customer(models.Model):
         max_length=1, choices=MEMBERSHIP_CHOICE, default=MEMBERSHIP_BRONZE)
 
 
-class Adress(models.Model):
+class Address(models.Model):
     street = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
