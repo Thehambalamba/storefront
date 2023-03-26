@@ -17,8 +17,8 @@
         <h1>Hello World</h1>
         {% endif %}
         <ul>
-            {% for order_item in order_items_products_collection_3 %}
-            <li>{{ order_item.unit_price }}</li>
+            {% for query in query_set %}
+            <li>unit_price: {{ query.unit_price }}, inventory: {{ query.inventory }}</li>
             {% endfor %}
         </ul>
     </body>
