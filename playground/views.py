@@ -1,12 +1,14 @@
 from django.shortcuts import render
-from django.db.models import Value, F
+from django.db.models import Value
+from django.db.models.functions import Concat
 from store.models import Customer
 
 
 def say_hello(request):
-    # add fields to a table using annotate
+    # anotate concated filds
     query_set = Customer.objects.annotate(
-        new_id=F('id') + 1, is_new=Value(True))
+        full_name=Concat('first_name', Value(' '), 'last_name')
+    )
     view_context = {'name': 'Nikola',
                     'result': query_set}
 
