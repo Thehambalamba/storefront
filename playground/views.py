@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from store.models import Order
+from django.db.models.aggregates import Count, Min
+from store.models import Product
 
 
 def say_hello(request):
-    # Handling relationships between table with query_sets
-    query_set = Order.objects.select_related(
-        'customer').prefetch_related('orderitem_set__product').order_by('-placed_at')[:5]
+    result = Product.objects.aggregate(
+        count=Count('id'), min_price=Min('unit_price'))
 
-    view_context = {'name': 'Nikola', 'orders': query_set}
+    view_context = {'name': 'Nikola', 'result': result}
 
     return render(request, 'hello.html', context=view_context)
