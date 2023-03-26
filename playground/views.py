@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from store.models import Product, OrderItem
+from store.models import Product
 
 
 def say_hello(request):
-    query_set = Product.objects.filter(id__in=OrderItem.objects.values_list(
-        'product_id').distinct()).order_by('title')
+    # We can deferr fields from being loaded (but we need to make sure we dont call this deferred field else where as it will result in a bunch of unecesary queries).
+    query_set = Product.objects.defer('description')
 
     view_context = {'name': 'Nikola', 'query_set': query_set}
 
