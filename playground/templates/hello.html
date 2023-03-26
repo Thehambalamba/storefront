@@ -17,7 +17,9 @@
         <h1>Hello World</h1>
         {% endif %}
         <ul>
-            <li>{{ product.id }}</li>
+            {% for query in query_set %}
+            <li>{{ query.title }}</li>
+            {% endfor %}
         </ul>
     </body>
 </body>
