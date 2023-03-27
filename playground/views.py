@@ -1,18 +1,16 @@
 from django.shortcuts import render
-from django.db import transaction
-
-from store.models import Order, OrderItem
+from django.db import connection
+from store.models import Product
 
 
 def say_hello(request):
-    # non transaction code here...
-    with transaction.atomic():
-        order = Order(customer_id=1)
-        order.save()
+    # using raw
+    query_set = Product.objects.raw('SELECT id, title FROM store_product')
 
-        item = OrderItem(order=order, product_id=-1, quantity=1, unit_price=10)
-        item.save()
-    # non transaction code here...
-    view_context = {'name': 'Nikola'}
+    # using connection.cursor
+    with connection.cursor() as cursor:
+        cursor.execute('SELECT id, title FROM store_product')
+
+    view_context = {'name': 'Nikola', "result": list(query_set)}
 
     return render(request, 'hello.html', context=view_context)
