@@ -1,12 +1,13 @@
 from django.shortcuts import render
-from django.contrib.contenttypes.models import ContentType
+
 from store.models import Product
-from tags.models import TaggedItem
 
 
 def say_hello(request):
-    query_set = TaggedItem.objects.get_tags_for(
-        object_type=Product, object_id=1)
+    query_set = Product.objects.all()
+    # if we evaluate all objects in a query_set reading from the same query set after will come from cache
+    list(query_set)
+    query_set[0]
     view_context = {'name': 'Nikola',
                     'result': list(query_set)}
 
