@@ -5,14 +5,8 @@ from tags.models import TaggedItem
 
 
 def say_hello(request):
-    content_type = ContentType.objects.get_for_model(Product)
-
-    query_set = TaggedItem.objects \
-        .select_related('tag') \
-        .filter(
-            content_type=content_type,
-            object_id=1
-        )
+    query_set = TaggedItem.objects.get_tags_for(
+        object_type=Product, object_id=1)
     view_context = {'name': 'Nikola',
                     'result': list(query_set)}
 
