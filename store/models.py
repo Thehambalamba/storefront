@@ -33,6 +33,9 @@ class Product(models.Model):
     collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
     promotions = models.ManyToManyField(Promotions, blank=True)
 
+    def __str__(self) -> str:
+        return self.title
+
 
 class Customer(models.Model):
     MEMBERSHIP_BRONZE = 'B'
