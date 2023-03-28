@@ -68,8 +68,11 @@ dill=0.3.6=py39hca03da5_0
 distributed=2022.7.0=py39hca03da5_0
 django=4.1=py39hca03da5_0
 django-debug-toolbar=3.8.1=pyhd8ed1ab_0
+django-filter=22.1=pyhd8ed1ab_0
+djangorestframework=3.14.0=pyhd8ed1ab_0
 docstring-to-markdown=0.11=py39hca03da5_0
 docutils=0.18.1=py39hca03da5_3
+drf-nested-routers=0.93.4=pypi_0
 entrypoints=0.4=py39hca03da5_0
 et_xmlfile=1.1.0=py39hca03da5_0
 executing=0.8.3=pyhd3eb1b0_0
