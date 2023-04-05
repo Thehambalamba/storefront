@@ -6,7 +6,7 @@ from .permissions import IsAdminOrReadOnly, ViewCustomerHistoryPermission
 from .pagination import DefaultPagination
 from .filters import ProductFilter
 from .models import CartItem, Collection, Product, OrderItem, Review, Cart, Customer, Order
-from .serializers import AddCartItemSerializer, CartItemSerializer, CartSerializer, CollectionSerializer, CustomerSerializer, ProductSerializer, ReviewSerializer, UpdateCartItemSerializer, OrderSerializer
+from .serializers import AddCartItemSerializer, CartItemSerializer, CartSerializer, CollectionSerializer, CustomerSerializer, ProductSerializer, ReviewSerializer, UpdateCartItemSerializer, OrderSerializer, CreateOrderSerializer
 
 
 class ProductViewSet(viewsets.ModelViewSet):
@@ -105,10 +105,18 @@ class OrderViewSet(viewsets.ModelViewSet):
     serializer_class = OrderSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+    def get_serializer_class(self):
+        if self.request.method == 'POST':
+            return CreateOrderSerializer
+        return OrderSerializer
+
+    def get_serializer_context(self):
+        return {'user_id': self.request.user.id}  # type: ignore
+
     def get_queryset(self):
         user = self.request.user
         if user.is_staff:  # type: ignore
             return Order.objects.all()
-        customer_id = Customer.objects.only(
+        (customer_id, created) = Customer.objects.only(
             'id').get_or_create(user_id=user.id)  # type: ignore
         return Order.objects.filter(customer_id=customer_id)
