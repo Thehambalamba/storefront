@@ -6,7 +6,10 @@ from .permissions import IsAdminOrReadOnly, ViewCustomerHistoryPermission
 from .pagination import DefaultPagination
 from .filters import ProductFilter
 from .models import CartItem, Collection, Product, OrderItem, Review, Cart, Customer, Order
-from .serializers import AddCartItemSerializer, CartItemSerializer, CartSerializer, CollectionSerializer, CustomerSerializer, ProductSerializer, ReviewSerializer, UpdateCartItemSerializer, OrderSerializer, CreateOrderSerializer
+from .serializers import AddCartItemSerializer, CartItemSerializer, \
+    CartSerializer, CollectionSerializer, CustomerSerializer, \
+    ProductSerializer, ReviewSerializer, UpdateCartItemSerializer, \
+    OrderSerializer, CreateOrderSerializer, UpdateOrderSerializer
 
 
 class ProductViewSet(viewsets.ModelViewSet):
@@ -120,6 +123,8 @@ class OrderViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         if self.request.method == 'POST':
             return CreateOrderSerializer
+        elif self.request.method == 'PATCH':
+            return UpdateOrderSerializer
         return OrderSerializer
 
     def get_queryset(self):
