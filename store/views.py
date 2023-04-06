@@ -1,13 +1,15 @@
 from django.db.models.aggregates import Count
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import response, viewsets, status, filters, mixins, decorators, permissions
+from rest_framework import response, viewsets, status, filters, \
+    mixins, decorators, permissions
 
 from .permissions import IsAdminOrReadOnly, ViewCustomerHistoryPermission
 from .pagination import DefaultPagination
 from .filters import ProductFilter
-from .models import CartItem, Collection, Product, OrderItem, Review, Cart, Customer, Order
+from .models import CartItem, Collection, Product, \
+    OrderItem, Review, Cart, Customer, Order, ProductImage
 from .serializers import AddCartItemSerializer, CartItemSerializer, \
-    CartSerializer, CollectionSerializer, CustomerSerializer, \
+    CartSerializer, CollectionSerializer, CustomerSerializer, ProductImageSerializer, \
     ProductSerializer, ReviewSerializer, UpdateCartItemSerializer, \
     OrderSerializer, CreateOrderSerializer, UpdateOrderSerializer
 
@@ -134,3 +136,13 @@ class OrderViewSet(viewsets.ModelViewSet):
         customer_id = Customer.objects.only(
             'id').get(user_id=user.id)  # type: ignore
         return Order.objects.filter(customer_id=customer_id)
+
+
+class ProductImageViewSet(viewsets.ModelViewSet):
+    serializer_class = ProductImageSerializer
+
+    def get_serializer_context(self):
+        return {'product_id': self.kwargs['product_pk']}
+
+    def get_queryset(self):
+        return ProductImage.objects.filter(product_id=self.kwargs['product_pk'])
