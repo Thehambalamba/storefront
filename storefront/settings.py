@@ -181,3 +181,7 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 2525
 DEFAULT_FROM_EMAIL = 'from@nikperv.com'
+
+ADMINS = [
+    ('Nikola', 'admin@nikperv.com')
+]
