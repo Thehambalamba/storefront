@@ -92,6 +92,7 @@ filelock=3.9.0=py39hca03da5_0
 flake8=6.0.0=py39hca03da5_0
 flask=2.2.2=py39hca03da5_0
 flit-core=3.6.0=pyhd3eb1b0_0
+flower=1.2.0=pypi_0
 fonttools=4.25.0=pyhd3eb1b0_0
 freetype=2.12.1=h1192e45_0
 fsspec=2022.11.0=py39hca03da5_0
@@ -110,6 +111,7 @@ hdf5=1.12.1=h160e8cb_2
 heapdict=1.0.1=pyhd3eb1b0_0
 holoviews=1.15.4=py39hca03da5_0
 huggingface_hub=0.10.1=py39hca03da5_0
+humanize=4.6.0=pypi_0
 hvplot=0.8.2=py39hca03da5_0
 hyperlink=21.0.0=pyhd3eb1b0_0
 icu=68.1=hc377ac9_0
