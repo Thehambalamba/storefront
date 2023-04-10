@@ -298,6 +298,7 @@ pyrsistent=0.18.0=py39h1a28f6b_0
 pysocks=1.7.1=py39hca03da5_0
 pytables=3.7.0=py39ha5d4e50_1
 pytest=7.1.2=py39hca03da5_0
+pytest-django=4.5.2=pyhd8ed1ab_0
 python=3.9.16=hc0d8a6c_1
 python-dateutil=2.8.2=pyhd3eb1b0_0
 python-fastjsonschema=2.16.2=py39hca03da5_0
