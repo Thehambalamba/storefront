@@ -2,6 +2,7 @@
 # $ conda create --name <env> --file <this file>
 # platform: osx-arm64
 alabaster=0.7.12=pyhd3eb1b0_0
+amqp=5.1.1=pypi_0
 anaconda=2023.03=py39_0
 anyio=3.5.0=py39hca03da5_0
 appdirs=1.4.4=pyhd3eb1b0_0
@@ -23,6 +24,7 @@ babel=2.11.0=py39hca03da5_0
 backcall=0.2.0=pyhd3eb1b0_0
 bcrypt=3.2.0=py39h1a28f6b_1
 beautifulsoup4=4.11.1=py39hca03da5_0
+billiard=3.6.4.0=pypi_0
 binaryornot=0.4.4=pyhd3eb1b0_1
 black=22.6.0=py39hca03da5_0
 blas=1.0=openblas
@@ -37,6 +39,7 @@ brunsli=0.1=hc377ac9_1
 bzip2=1.0.8=h620ffc9_4
 c-ares=1.18.1=h1a28f6b_0
 ca-certificates=2023.01.10=hca03da5_0
+celery=5.2.7=pypi_0
 certifi=2022.12.7=py39hca03da5_0
 cffi=1.15.1=py39h80987f9_3
 cfitsio=3.470=h7f6438f_7
@@ -44,6 +47,9 @@ chardet=4.0.0=py39hca03da5_1003
 charls=2.2.0=hc377ac9_0
 charset-normalizer=2.0.4=pyhd3eb1b0_0
 click=8.0.4=py39hca03da5_0
+click-didyoumean=0.3.0=pypi_0
+click-plugins=1.1.1=pypi_0
+click-repl=0.2.0=pypi_0
 cloudpickle=2.0.0=pyhd3eb1b0_0
 colorama=0.4.6=py39hca03da5_0
 colorcet=3.0.1=py39hca03da5_0
@@ -147,6 +153,7 @@ jupyterlab_server=2.19.0=py39hca03da5_0
 jxrlib=1.1=h1a28f6b_2
 keyring=23.4.0=py39hca03da5_0
 kiwisolver=1.4.4=py39h313beb8_0
+kombu=5.2.4=pypi_0
 krb5=1.19.4=h8380606_0
 lazy-object-proxy=1.6.0=py39h1a28f6b_0
 lcms2=2.12=hba8e193_0
@@ -316,6 +323,7 @@ qtpy=2.2.0=py39hca03da5_0
 qtwebkit=5.212=h0f11f3c_4
 queuelib=1.5.0=py39hca03da5_0
 readline=8.2=h1a28f6b_0
+redis=3.5.3=pyhd3eb1b0_0
 regex=2022.7.9=py39h1a28f6b_0
 requests=2.28.1=py39hca03da5_0
 requests-file=1.5.1=pyhd3eb1b0_0
@@ -388,6 +396,7 @@ unidecode=1.2.0=pyhd3eb1b0_0
 unixodbc=2.3.11=h1a28f6b_0
 uritemplate=4.1.1=pypi_0
 urllib3=1.26.14=py39hca03da5_0
+vine=5.0.0=pypi_0
 w3lib=1.21.0=pyhd3eb1b0_0
 watchdog=2.1.6=py39h1a28f6b_0
 wcwidth=0.2.5=pyhd3eb1b0_0
