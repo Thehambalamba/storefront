@@ -115,6 +115,7 @@ gprof2dot=2019.11.30=py_0
 greenlet=2.0.1=py39h313beb8_0
 gst-plugins-base=1.14.1=h313beb8_1
 gstreamer=1.14.1=h80987f9_1
+gunicorn=20.1.0=py39h2804cbe_0
 h5py=3.7.0=py39h7fe8675_0
 hdf5=1.12.1=h160e8cb_2
 heapdict=1.0.1=pyhd3eb1b0_0
@@ -321,6 +322,7 @@ python-slugify=5.0.2=pyhd3eb1b0_0
 python-snappy=0.6.1=py39h313beb8_0
 python.app=3=py39h1a28f6b_0
 python3-openid=3.2.0=pypi_0
+python_abi=3.9=2_cp39
 pytoolconfig=1.2.5=py39hca03da5_1
 pytorch=1.12.1=cpu_py39h8370978_1
 pytz=2022.7=py39hca03da5_0
