@@ -421,6 +421,7 @@ websocket-client=0.58.0=py39hca03da5_4
 werkzeug=2.2.2=py39hca03da5_0
 whatthepatch=1.0.2=py39hca03da5_0
 wheel=0.38.4=py39hca03da5_0
+whitenoise=6.4.0=pyhd8ed1ab_0
 wrapt=1.14.1=py39h1a28f6b_0
 wurlitzer=3.0.2=py39hca03da5_0
 xarray=2022.11.0=py39hca03da5_0
