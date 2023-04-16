@@ -79,6 +79,8 @@ django=4.1=py39hca03da5_0
 django-cors-headers=3.14.0=pyhd8ed1ab_0
 django-debug-toolbar=3.8.1=pyhd8ed1ab_0
 django-filter=22.1=pyhd8ed1ab_0
+django-redis=5.2.0=pypi_0
+django-silk=5.0.3=pyhd8ed1ab_0
 django-templated-mail=1.1.1=pypi_0
 djangorestframework=3.14.0=pyhd8ed1ab_0
 djangorestframework-simplejwt=4.8.0=pypi_0
@@ -109,6 +111,7 @@ giflib=5.2.1=h80987f9_3
 glib=2.69.1=h514c7bf_2
 gmp=6.2.1=hc377ac9_3
 gmpy2=2.1.2=py39h8c48613_0
+gprof2dot=2019.11.30=py_0
 greenlet=2.0.1=py39h313beb8_0
 gst-plugins-base=1.14.1=h313beb8_1
 gstreamer=1.14.1=h80987f9_1
